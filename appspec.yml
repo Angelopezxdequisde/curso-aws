@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source>: /
+    destination: /var/www/html
+    overwrite: true
+
+file_exist_behavior: OVERWRITE
+
+hooks:
+  ApplicationStart:
+  - location: scrips/start_server
+    timeout: 3600
+    runas: root
